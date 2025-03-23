@@ -1,17 +1,33 @@
-name: Run K6 and Artillery tests
+name: K6 Load Testing
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  k6-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm install
-      - run: npm run test:k6
-      - run: npm run test:artillery
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Install k6
+      run: |
+        curl -s https://packagecloud.io/install/repositories/loadimpact/k6/script.deb.sh | sudo bash
+        sudo apt-get install k6
+
+    - name: Run k6 test
+      run: npm run test:k6

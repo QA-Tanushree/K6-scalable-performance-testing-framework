@@ -52,21 +52,15 @@ npm install -g artillery
 ![image](https://github.com/user-attachments/assets/9212f7b9-7cac-4bbe-a274-64fb6cb60c3d)
 
 ## Features
- ✅ Scalable Load Testing
-  
-🚀 Multi-Tool Integration (K6 & Artillery)
- 
-🔍 Comprehensive API Testing
 
-📊 Automated Reporting & Analytics
-
-🔄 Reusable & Modular Test Structure
-
-🛠️ CI/CD & Automation Ready
-
-🔥 Flexible Test Scenarios
-
-🛡️ Security & Reliability Testing
+- Scalable Load Testing
+- Multi-Tool Integration (K6 & Artillery)
+- Comprehensive API Testing
+- Automated Reporting & Analytics
+- Reusable & Modular Test Structure
+- CI/CD & Automation Ready
+- Flexible Test Scenarios
+- Security & Reliability Testing
 
 ### ✅ Features & How They Work in Your Project
 

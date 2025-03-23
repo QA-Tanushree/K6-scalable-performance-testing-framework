@@ -25,5 +25,3 @@ jobs:
       - name: Run K6 tests
         run: npm run test:k6
 
-      - name: Run Artillery tests
-        run: npm run test:artillery

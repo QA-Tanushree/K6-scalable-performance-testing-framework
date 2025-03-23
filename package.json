@@ -4,10 +4,11 @@
   "description": "Load testing project with K6 and Artillery",
   "main": "index.js",
   "scripts": {
+    "setup": "./scripts/setupTestEnv.sh",
     "test:k6": "k6 run tests/apiTest.js --out json=reports/k6-results.json",
-    "report:k6": "k6 stats reports/k6-results.json",
+    "report:k6": "node scripts/generateReport.js",
     "test:artillery": "artillery run tests/userScenarioTest.yml",
-    "report:artillery": "artillery report --output reports/artillery-report.html reports/artillery-results.json",
+    "report:artillery": "artillery report --output reports/artillery-report.yml reports/artillery-results.json",
     "test:all": "npm run test:k6 && npm run test:artillery",
     "report:all": "npm run report:k6 && npm run report:artillery"
   },
@@ -21,5 +22,6 @@
   "license": "ISC",
   "devDependencies": {
     "k6": "^0.0.0"
-  }
+  },
+  "type": "module" 
 }

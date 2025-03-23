@@ -49,7 +49,8 @@ npm install -g artillery
 ```
 ## Project Stracture 
 
-![image](https://github.com/user-attachments/assets/9212f7b9-7cac-4bbe-a274-64fb6cb60c3d)
+![image](https://github.com/user-attachments/assets/a6e2f9be-9010-4c9e-b118-803ebd8c0775)
+
 
 ## Features
 

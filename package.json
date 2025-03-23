@@ -4,7 +4,7 @@
   "description": "Load testing project with K6 and Artillery",
   "main": "index.js",
   "scripts": {
-    "test:k6": "npx k6 run tests/createUserTest.js --out json=reports/k6-results.json",
+    "test:k6": "k6 run tests/apiTest.js --out json=reports/k6-results.json",
     "report:k6": "k6 stats reports/k6-results.json",
     "test:artillery": "artillery run tests/userScenarioTest.yml",
     "report:artillery": "artillery report --output reports/artillery-report.html reports/artillery-results.json",
@@ -13,9 +13,6 @@
   },
   "dependencies": {
     "artillery": "^2.0.22"
-  },
-  "devDependencies": {
-    "k6": "^0.0.0"
   },
   "engines": {
     "node": ">=14.0.0"

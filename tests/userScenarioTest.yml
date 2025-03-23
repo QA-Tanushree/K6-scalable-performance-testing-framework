@@ -1,0 +1,76 @@
+config:
+  target: 'https://reqres.in/api'
+  phases:
+    - duration: 60  # Run the test for 60 seconds
+      arrivalRate: 5  # 5 new virtual users per second
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "User Registration, Login, and CRUD Operations"
+    flow:
+      # Step 1: Register User
+      - post:
+          url: "/register"
+          json:
+            email: "eve.holt@reqres.in"
+            password: "pistol"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+          expect:
+            - statusCode: 200
+
+      # Step 2: Login User
+      - post:
+          url: "/login"
+          json:
+            email: "eve.holt@reqres.in"
+            password: "cityslicka"
+          capture:
+            - json: "$.token"
+              as: "loginToken"
+          expect:
+            - statusCode: 200
+
+      # Step 3: Create User (Using Authentication Token)
+      - post:
+          url: "/users"
+          json:
+            name: "Morpheus"
+            job: "Leader"
+          headers:
+            Authorization: "Bearer {{ loginToken }}"
+          capture:
+            - json: "$.id"
+              as: "userId"
+          expect:
+            - statusCode: 201
+
+      # Step 4: Get User Details
+      - get:
+          url: "/users/{{ userId }}"
+          headers:
+            Authorization: "Bearer {{ loginToken }}"
+          expect:
+            - statusCode: 200
+
+      # Step 5: Update User
+      - put:
+          url: "/users/{{ userId }}"
+          json:
+            name: "Morpheus"
+            job: "Updated Job"
+          headers:
+            Authorization: "Bearer {{ loginToken }}"
+          expect:
+            - statusCode: 200
+
+      # Step 6: Delete User
+      - delete:
+          url: "/users/{{ userId }}"
+          headers:
+            Authorization: "Bearer {{ loginToken }}"
+          expect:
+            - statusCode: 204

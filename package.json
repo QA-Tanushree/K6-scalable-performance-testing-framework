@@ -12,11 +12,10 @@
     "report:all": "npm run report:k6 && npm run report:artillery"
   },
   "dependencies": {
-    "artillery": "^2.0.22",
-    "artillery-plugin-k6": "^0.2.0"
+    "artillery": "^2.0.22"
   },
   "devDependencies": {
-    "k6": "^0.42.0"
+    "k6": "^0.0.0"
   },
   "engines": {
     "node": ">=14.0.0"

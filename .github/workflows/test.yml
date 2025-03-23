@@ -18,10 +18,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install k6
+      - name: Install k6 (via Snap)
         run: |
-          sudo apt update
-          sudo apt install -y k6
+          sudo snap install k6
 
       - name: Run K6 tests
         run: npm run test:k6

@@ -26,8 +26,8 @@ Before you begin, ensure you have the following installed on your machine:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/QA-Tanushree/k6-scalable-ci-test-framework.git
-cd k6-scalable-ci-test-framework
+git clone https://github.com/QA-Tanushree/K6-scalable-performance-testing-framework.git
+cd K6-scalable-performance-testing-framework
 ```
 
 2. Install project dependencies:

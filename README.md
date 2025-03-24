@@ -218,7 +218,7 @@ duration: 60  # Simulating 60 seconds of high traffic
 ✅ Can simulate thousands of concurrent users.
 
 ### Contributing
-We welcome contributions to this project! To contribute, please fork the repository, create a feature branch, and submit a pull request with your changes.
+Welcome contributions to this project! To contribute, please fork the repository, create a feature branch, and submit a pull request with your changes.
 
 Ensure that your changes are well-tested and follow the project's coding style.
 
